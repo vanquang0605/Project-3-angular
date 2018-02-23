@@ -1,0 +1,35 @@
+<nav class="navbar navbar-toggleable-md bg-faded">
+  <div class="collapse navbar-collapse">
+    <a class="navbar-brand" href="#">
+      <img src="https://www.w3schools.com/bootstrap4/bird.jpg" alt="Logo" style="width:40px;">
+    </a>
+    <ul class="nav nav-pills mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="book">Books</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="chat-room">Chat Room</a>
+      </li>
+    </ul>
+    <div class="form-inline mr-5" *ngIf="!currentUser">
+      <a class="btn btn-info mr-2" routerLink="login">Login</a>
+      <a class="btn btn-danger" routerLink="signup">Signup</a>
+    </div>
+    <div class="mr-5" *ngIf="currentUser">
+      <div class="btn-group">
+        <button type="button" class="btn btn-outline-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{currentUser.email}}
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" (click)="onLogout()">Log out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="container">
+    <div class="item"></div>
+</div>

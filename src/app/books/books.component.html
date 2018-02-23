@@ -1,0 +1,26 @@
+<div class="mt-4" style="width: 96%; margin: auto">
+  <div class="jumbotron">
+    <h1>Google Book API</h1>
+  </div>
+  <div class="row">
+    <div class="search-bar col-sm-3">
+      <h4 style="color: cornflowerblue">
+        <label for="book">Book search</label>
+      </h4>
+      <input type="text" id="book" class="form-control" [formControl]="bookForm" placeholder="Search">
+      <div *ngFor="let book of booksSearched">
+        <div class="card">
+          <div class="card-header">
+            <h4>{{book.volumeInfo?.title}}</h4>
+            <img src="{{book.volumeInfo.imageLinks?.smallThumbnail}}" alt="">
+          </div>
+          <a class="btn btn-primary btn-sm" (click)="onInsertBook(book.volumeInfo)">Add</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-9">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+</div>

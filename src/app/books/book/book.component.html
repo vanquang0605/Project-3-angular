@@ -1,0 +1,17 @@
+<h4 style="color: cadetblue">Book Detail</h4>
+<div class="book-detail" *ngIf="bookService.bookSelected">
+  <div class="card">
+    <div class="card-header">
+      <h6>{{bookService.bookSelected.title}}</h6>
+      <img src="{{bookService.bookSelected.imageLinks.smallThumbnail}}" alt="">
+    </div>
+    <div class="card-blockquote p-4">
+      <p>
+        <em>{{bookService.bookSelected.authors | json}}</em>
+      </p>
+      <p style="height: 80px; overflow: hidden; text-overflow: ellipsis">
+        <em>{{bookService.bookSelected.description}}</em></p>
+      <p>{{bookService.bookSelected.pageCount}} pages</p>
+    </div>
+  </div>
+</div>
